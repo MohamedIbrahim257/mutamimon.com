@@ -1451,6 +1451,31 @@ body:not(.enable-search-modal) .site-logo img {
 	color: #fff;
 }
 
+.whatsappchat{
+
+	position: fixed;
+	left: 15px;
+	bottom: 40px;
+	z-index: 11;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	line-height: 1;
+	border-radius:50%;
+	box-shadow: 0 1px 20px rgba(0,0,0,0.15);
+	transition: box-shadow 500ms;
+}
+.whatsappchat:hover{
+	box-shadow: 0 5px 20px 0 #0d5067;
+}
+
+.whatsappimage{
+	
+	border-radius:50%;
+	box-shadow: 0 1px 15px rgba(0,0,0,0.15);
+
+}
+
 /* Primary Menu ---------------------------- */
 
 .primary-menu-wrapper {
