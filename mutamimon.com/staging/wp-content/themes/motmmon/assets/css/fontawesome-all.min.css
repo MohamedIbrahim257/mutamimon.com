@@ -170,6 +170,20 @@
  .fa-angle-down:before {
      content: "\f107";
  }
+
+ .fa-linkedin-in:before {
+    content: "\f0e1";
+}
+
+.fa-tiktok:before {
+    content: "\f97b";
+}
+.fa-snapchat:before {
+    content: "\f2ab";
+}
+
+
+
  
  
  
