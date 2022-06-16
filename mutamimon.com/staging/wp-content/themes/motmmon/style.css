@@ -1432,6 +1432,25 @@ body:not(.enable-search-modal) .site-logo img {
 	padding-top: 0.8rem;
 }
 
+.searchButton{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color:#12546a;
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	transition: 0.5;
+}
+
+.searchingBtn :hover{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color:#094776;
+	color: #fff;
+}
+
 /* Primary Menu ---------------------------- */
 
 .primary-menu-wrapper {
