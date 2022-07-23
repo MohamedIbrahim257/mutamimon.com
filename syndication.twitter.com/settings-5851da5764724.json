@@ -1,1 +1,0 @@
-{"should_obtain_cookie_consent":false,"features":{"tfw_experiments_cookie_expiration":{"bucket":1209600,"version":null},"tfw_refsrc_session":{"bucket":"off","version":null},"tfw_sensitive_media_interstitial_13963":{"bucket":"interstitial","version":null},"tfw_tweet_result_migration_13979":{"bucket":"tweet_result","version":null}}}
