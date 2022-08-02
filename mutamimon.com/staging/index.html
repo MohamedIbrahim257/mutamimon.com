@@ -817,14 +817,10 @@
 					</div>
 
 
-
 					<div class="col-md-4">
 						<div class="recent-property">
 							<h3><a href="/projects/%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d9%81%d8%a7%d9%84%d9%8a-1/">متممون
 									فالي 1</a></h3>
-<!-- 
-							<a href="/city/%d9%85%d8%af%d9%8a%d9%86%d8%a9-%d8%a7%d9%84%d8%b1%d9%8a%d8%a7%d8%b6/"><span
-									class="property-city"><i class="fas fa-map-marker-alt"></i>مدينة الرياض</span></a> -->
 							<div class="pimg-wrapper">
 								<a href="/projects/%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d9%81%d8%a7%d9%84%d9%8a-1/">
 									<img src="/wp-content/uploads/2022/06/متممون-فالي-1-1200x675.jpg" width="480"
@@ -842,8 +838,10 @@
 						</div>
 					</div>
 
-
-
+					<div class="property-box">
+						
+					</div>
+	
 
 				</div>
 			</div>
@@ -1401,6 +1399,66 @@
 
 	<link rel='stylesheet' id='wpforms-full-css'
 		href='/wp-content/plugins/wpforms-lite/assets/css/wpforms-full.min.css?ver=1.7.4.2' media='all' />
+
+
+		<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+		<script>
+			var firebaseConfig = {
+				apiKey: "AIzaSyDOne-swdHmSrAvJOxeCMGrpeDNJQ1Di4A",
+				authDomain: "mutamimon-c1e68.firebaseapp.com",
+				databaseURL: "https://mutamimon-c1e68-default-rtdb.firebaseio.com",
+				projectId: "mutamimon-c1e68",
+				storageBucket: "mutamimon-c1e68.appspot.com",
+				messagingSenderId: "7245330178",
+				appId: "1:7245330178:web:3a792f8f0b3215f915b41b",
+				measurementId: "G-JVCXL6GDES"
+			};
+	
+			firebase.initializeApp(firebaseConfig);
+			var messagesRef = firebase.database()
+				.ref('Project Data');
+	
+			messagesRef.once("value", (snapshot) => {
+				snapshot.forEach((element) => {
+					console.log(element.val());
+					document.querySelector(".property-box").innerHTML += `
+	
+							  
+					<div class="col-md-4">
+							<div class="recent-property">
+								<h3><a href="/projects/%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d9%81%d8%a7%d9%84%d9%8a-1/">${element.val().name}</a></h3>
+								<div class="pimg-wrapper">
+									<a href="/projects/%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d9%81%d8%a7%d9%84%d9%8a-1/">
+										<img src="${element.val().photo[0].url}" width="480"
+											height="299" alt="متممون فالي 1" title="متممون فالي 1">
+									</a>
+									<a class="project-type" href="/type/%d8%b4%d9%82%d9%82/">${element.val().category}</a>
+								</div>
+	
+								<div class="project-excerpt">
+									<p>${element.val().desc}</p>
+								</div>
+	
+	
+							</div>
+						</div>
+				`
+	
+				})
+	
+			})
+		</script>
+
+
+
+
+
+
+
+
+
+
+		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>	
 	<script src='/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js'></script>
 	<script src='/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.13.1' id='jquery-ui-datepicker-js'></script>
@@ -1427,7 +1485,6 @@
 // var wpforms_settings = {"val_required":"This field is required.","val_email":"Please enter a valid email address.","val_email_suggestion":"Did you mean {suggestion}?","val_email_suggestion_title":"Click to accept this suggestion.","val_email_restricted":"This email address is not allowed.","val_number":"Please enter a valid number.","val_number_positive":"Please enter a valid positive number.","val_confirm":"Field values do not match.","val_checklimit":"You have exceeded the number of allowed selections: {#}.","val_limit_characters":"{count} of {limit} max characters.","val_limit_words":"{count} of {limit} max words.","val_recaptcha_fail_msg":"Google reCAPTCHA verification failed, please try again later.","val_empty_blanks":"Please fill out all blanks.","uuid_cookie":"","locale":"ar","wpforms_plugin_url":"https:\/\/mahmoud-reda.com\/staging\/wp-content\/plugins\/wpforms-lite\/","gdpr":"","ajaxurl":"https:\/\/mahmoud-reda.com\/staging\/wp-admin\/admin-ajax.php","mailcheck_enabled":"1","mailcheck_domains":[],"mailcheck_toplevel_domains":["dev"],"is_ssl":"1"}
 		/* ]]> */
 	</script>
-
 </body>
 
 </html>

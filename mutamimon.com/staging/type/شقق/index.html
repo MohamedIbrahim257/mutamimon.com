@@ -20,7 +20,15 @@
 	<title>شقق - متممون العقارية</title>
 	<meta name="robots" content="nofollow, noindex" />
 	<meta property="og:locale" content="ar_AR" />
-	<meta property="og:type" content="article" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JVCXL6GDES"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JVCXL6GDES');
+</script>
 	<meta property="og:title" content="شقق - متممون العقارية" />
 	<meta property="og:url" content="/type/%d8%b4%d9%82%d9%82/" />
 	<meta property="og:site_name" content="متممون العقارية" />
@@ -601,6 +609,10 @@
 							</div>
 						</div>
 
+						<div class="property-card">
+
+						</div>
+
 
 
 					</div>
@@ -790,6 +802,83 @@
 	</script>
 	<script src='/wp-content/plugins/a3-lazy-load/assets/js/jquery.lazyloadxt.extend.js?ver=2.5.0'
 		id='jquery-lazyloadxt-extend-js'></script>
+		<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+		<script>
+			var firebaseConfig = {
+				apiKey: "AIzaSyDOne-swdHmSrAvJOxeCMGrpeDNJQ1Di4A",
+				authDomain: "mutamimon-c1e68.firebaseapp.com",
+				databaseURL: "https://mutamimon-c1e68-default-rtdb.firebaseio.com",
+				projectId: "mutamimon-c1e68",
+				storageBucket: "mutamimon-c1e68.appspot.com",
+				messagingSenderId: "7245330178",
+				appId: "1:7245330178:web:3a792f8f0b3215f915b41b",
+				measurementId: "G-JVCXL6GDES"
+			};
+	
+			firebase.initializeApp(firebaseConfig);
+			var messagesRef = firebase.database()
+				.ref('Project Data');
+			console.log(messagesRef);
+			let arr = [];
+	
+			messagesRef.once("value", (snapshot) => {
+				snapshot.forEach((element) => {
+					console.log(element.val());
+					element.val().category === "شقق" ? arr.push(element.val()) : console.log("welcome");
+					console.log(arr);
+					// 		document.querySelector(".property-card").innerHTML += `
+	
+					//         <div class="col-md-4">
+					// 			<div class="recent-property">
+					// 						<a href="/projects/%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d9%81%d8%a7%d9%84%d9%8a-1/"
+					// 							tabindex="0">
+					// 							<div>
+					// 								<div> <img src=${arr.photo}"
+					// 										width="480" height="299" alt="متممون فالي 1" title="متممون فالي 1">
+					// 								</div>
+					// 							</div>
+					// 							<div>
+					// 								<div class="title">${arr.name}</div>
+					// 							</div>
+					// 							<div>
+					// 							</div>
+					// 						</a>
+					// 					</div>
+					// 				</div>
+					// `
+				})
+				arr.map(e => {
+					document.querySelector(".property-card").innerHTML += `
+	
+					<div class="col-md-4">
+						<div class="recent-property">
+									<a href="/projects/m-projects.html"
+										tabindex="0">
+										<div>
+											<div> <img src=${e.photo[0].url}"
+													width="480" height="299" alt="متممون فالي 1" title="متممون فالي 1">
+											</div>
+										</div>
+										<div>
+											<div class="title">${e.name}</div>
+										</div>
+										<div>
+										</div>
+									</a>
+								</div>
+							</div>
+			`
+				})
+	
+	
+			})
+	
+	
+	
+	
+	
+	
+		</script>
 
 </body>
 
