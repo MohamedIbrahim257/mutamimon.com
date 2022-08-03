@@ -1,9 +1,7 @@
 
-
-// alert(window.location.search);
 let id = window.location.search;
 id = id.substring(4);
-// cut from id the first 4 string y bahsa
+
 var firebaseConfig = {
     apiKey: "AIzaSyDOne-swdHmSrAvJOxeCMGrpeDNJQ1Di4A",
     authDomain: "mutamimon-c1e68.firebaseapp.com",
@@ -26,26 +24,6 @@ messagesRef.once("value", (snapshot) => {
         console.log(element.val());
         element.val().id === id ? arr.push(element.val()) : console.log("welcome");
         console.log(arr);
-        // 		document.querySelector(".property-card").innerHTML += `
-
-        //         <div class="col-md-4">
-        // 			<div class="recent-property">
-        // 						<a href="/projects/%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d9%81%d8%a7%d9%84%d9%8a-1/"
-        // 							tabindex="0">
-        // 							<div>
-        // 								<div> <img src=${arr.photo}"
-        // 										width="480" height="299" alt="متممون فالي 1" title="متممون فالي 1">
-        // 								</div>
-        // 							</div>
-        // 							<div>
-        // 								<div class="title">${arr.name}</div>
-        // 							</div>
-        // 							<div>
-        // 							</div>
-        // 						</a>
-        // 					</div>
-        // 				</div>
-        // `
     })
     arr.map(e => {
 
@@ -76,7 +54,7 @@ messagesRef.once("value", (snapshot) => {
 
 
 <div class="project-gallery">
-    <div id="gallery" class="gallery-item"></div>
+    <div  class="gallery-item gallery"></div>
 </div>
 </div>
 <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
@@ -245,7 +223,7 @@ messagesRef.once("value", (snapshot) => {
 </div>
 
 `
-        let z = document.getElementById("gallery");
+        let z = document.querySelector(".gallery");
         for (let i = 0; i < e.photo.length; i++) {
             let input = document.createElement("img");
             input.src = e.photo[i].url;
@@ -267,25 +245,43 @@ messagesRef.once("value", (snapshot) => {
             }
         }
 
+
+        $('.project-gallery').each(function () {
+			var slider = $(this);
+			slider.slick({
+				arrows: true,
+				dots: true,
+				accessibility: false,
+				infinite: true,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				responsive: [{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
+				]
+			});
+
+			var sLightbox = $(this);
+			sLightbox.slickLightbox({
+				src: 'src',
+				itemSelector: '.gallery-item img'
+			});
+		});
+
     })
-//     <table cellspacing="0" cellpadding="0">
-//     <tbody>
-
-//         <tr>
-//             <td>عنوان تجريبي</td>
-//             <td>عنوان تجريبي</td>
-//         </tr>
-//         <tr>
-//             <td>عنوان تجريبي</td>
-//             <td>عنوان تجريبي</td>
-//         </tr>
-//         <tr>
-//             <td>عنوان تجريبي</td>
-//             <td>عنوان تجريبي</td>
-//         </tr>
-//     </tbody>
-// </table>
-
 })
 
 

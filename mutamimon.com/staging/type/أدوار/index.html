@@ -974,7 +974,7 @@
 
 	            <div class="col-md-4">
 					<div class="recent-property">
-								<a href="/projects/m-projects.html"
+								<a role="button" onclick="getPage('${e.id}')"
 									tabindex="0">
 									<div>
 										<div> <img src=${e.photo[0].url}"
@@ -995,6 +995,10 @@
 
 		})
 
+		function getPage(id) {
+			window.location.href = "/projects/m-projects.html?id=" + id;
+
+		}
 
 
 

@@ -1426,9 +1426,11 @@
 							  
 					<div class="col-md-4">
 							<div class="recent-property">
-								<h3><a href="/projects/%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d9%81%d8%a7%d9%84%d9%8a-1/">${element.val().name}</a></h3>
+								<h3>
+									<a role="button" onclick="getPage('${element.val().id}')>
+									${element.val().name}</a></h3>
 								<div class="pimg-wrapper">
-									<a href="/projects/%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d9%81%d8%a7%d9%84%d9%8a-1/">
+									<a role="button" onclick="getPage('${element.val().id}')>
 										<img src="${element.val().photo[0].url}" width="480"
 											height="299" alt="متممون فالي 1" title="متممون فالي 1">
 									</a>
@@ -1447,6 +1449,12 @@
 				})
 	
 			})
+
+			function getPage(id) {
+			window.location.href = "/projects/m-projects.html?id=" + id;
+
+		}
+
 		</script>
 
 
