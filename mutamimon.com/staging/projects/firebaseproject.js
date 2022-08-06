@@ -53,9 +53,12 @@ messagesRef.once("value", (snapshot) => {
 </div>
 
 
-<div class="project-gallery">
-    <div  class="gallery-item gallery"></div>
+<div class="project-gallery ">
+    <div  class="gallery-item gallery project-gallery ">
+
 </div>
+
+
 </div>
 <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
 <div id="main" class="content_area layout-main clearfix">

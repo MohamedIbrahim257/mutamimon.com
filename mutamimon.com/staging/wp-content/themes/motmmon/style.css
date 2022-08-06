@@ -570,6 +570,13 @@ iframe.instagram-media {
 
 
 /* GALLERIES */
+/* .project-gallery {
+	background-color: red;
+	display: flex;
+	justify-content: center;
+	width: 50%;
+
+} */
 
 .gallery {
 	display: flex;
@@ -578,15 +585,10 @@ iframe.instagram-media {
 	width: calc(100% + 1.6em);
 }
 
-.gallery-item {
-	margin: 0.8em 0;
-	padding: 0 0.8em;
-	width: 100%;
-	cursor: pointer;
-}
 
 .gallery-item img {
-    height: 300px;
+    height: 400px;
+
 }
 
 .gallery-caption {
@@ -6655,7 +6657,6 @@ form.searchandfilter {
 }
 
 
-
 .heading-divider {
     display: block;
     width: 75px;
@@ -6670,7 +6671,6 @@ form.searchandfilter {
     overflow: hidden;
     margin: 0;
     padding: 40px 0;
-    background: #eff1f6;
 }
 
 .latest-properties.alter {
@@ -6711,6 +6711,7 @@ form.searchandfilter {
 .recent-property .title:hover {
     color: #ED970E;
 }
+
 
 .recent-property .unit-item {
     background: #fff;
