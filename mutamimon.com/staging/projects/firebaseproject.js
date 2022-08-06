@@ -54,6 +54,7 @@ messagesRef.once("value", (snapshot) => {
 
 
 <div class="project-gallery ">
+
     <div  class="gallery-item gallery project-gallery ">
 
 </div>
