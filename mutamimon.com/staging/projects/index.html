@@ -974,7 +974,7 @@
 
 		firebase.initializeApp(firebaseConfig);
 		var messagesRef = firebase.database()
-			.ref('Project Data');
+			.ref('Projects');
 
 		messagesRef.once("value", (snapshot) => {
 			snapshot.forEach((element) => {

@@ -15,7 +15,7 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 var messagesRef = firebase.database()
-    .ref('Project Data');
+    .ref('Projects');
 console.log(messagesRef);
 let arr = [];
 
@@ -53,9 +53,9 @@ messagesRef.once("value", (snapshot) => {
 </div>
 
 
-<div class="project-gallery ">
+<div class="project-gallery" id="project-gallery" >
 
-    <div  class="gallery-item gallery project-gallery ">
+    <div id="slick" class="gallery-item project-gallery">
 
 </div>
 
@@ -227,12 +227,14 @@ messagesRef.once("value", (snapshot) => {
 </div>
 
 `
-        let z = document.querySelector(".gallery");
+        let z = document.getElementById("project-gallery");
         for (let i = 0; i < e.photo.length; i++) {
             let input = document.createElement("img");
             input.src = e.photo[i].url;
             z.appendChild(input);
+           
         }
+   
         let p = document.getElementById("zeTable");
         for(let i=0;i< e.details.length;i++){
             if(i == 2){
@@ -249,7 +251,7 @@ messagesRef.once("value", (snapshot) => {
             }
         }
 
-
+    
         $('.project-gallery').each(function () {
 			var slider = $(this);
 			slider.slick({
