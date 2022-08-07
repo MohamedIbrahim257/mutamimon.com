@@ -43,7 +43,7 @@ messagesRef.once("value", (snapshot) => {
         <h1>${e.name}</h1>
 
         <div class="project-misc">
-            <span>بأسعار تبدأ من: ${e.price} ألف ريال</span>
+            <span>بأسعار تبدأ من: ${e.price}</span>
 
 
 
@@ -53,11 +53,11 @@ messagesRef.once("value", (snapshot) => {
 </div>
 
 
-<div class="project-gallery" id="project-gallery" >
 
-    <div id="slick" class="gallery-item project-gallery">
 
-</div>
+    <div id="slick" class=" project-gallery gallery-item">
+
+
 
 
 </div>
@@ -227,13 +227,18 @@ messagesRef.once("value", (snapshot) => {
 </div>
 
 `
-        let z = document.getElementById("project-gallery");
+        let z = document.querySelector(".project-gallery");
+      
+
         for (let i = 0; i < e.photo.length; i++) {
+          
             let input = document.createElement("img");
             input.src = e.photo[i].url;
             z.appendChild(input);
            
         }
+
+    
    
         let p = document.getElementById("zeTable");
         for(let i=0;i< e.details.length;i++){
@@ -283,7 +288,7 @@ messagesRef.once("value", (snapshot) => {
 			var sLightbox = $(this);
 			sLightbox.slickLightbox({
 				src: 'src',
-				itemSelector: '.gallery-item img'
+				itemSelector: 'img'
 			});
 		});
 

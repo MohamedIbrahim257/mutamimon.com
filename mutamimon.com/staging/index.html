@@ -842,8 +842,12 @@
 						</div>
 					</div>
 
-	
-						<div class="property-card" ></div>
+	                    
+						<div class="property-card home-project" >
+							
+						</div>
+
+						
 
 
 					</div>
@@ -1408,31 +1412,11 @@
 				console.log(element.val());
 				element.val().curr === true ? arr.push(element.val()) : console.log("welcome");
 				console.log(arr);
-				// 		document.querySelector(".property-card").innerHTML += `
-
-				//         <div class="col-md-4">
-				// 			<div class="recent-property">
-				// 						<a href="/projects/%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d9%81%d8%a7%d9%84%d9%8a-1/"
-				// 							tabindex="0">
-				// 							<div>
-				// 								<div> <img src=${arr.photo}"
-				// 										width="480" height="299" alt="متممون فالي 1" title="متممون فالي 1">
-				// 								</div>
-				// 							</div>
-				// 							<div>
-				// 								<div class="title">${arr.name}</div>
-				// 							</div>
-				// 							<div>
-				// 							</div>
-				// 						</a>
-				// 					</div>
-				// 				</div>
-				// `
 			})
 			arr.map(e => {
 				document.querySelector(".property-card").innerHTML += `
 				
-			<div class="col-md-12 ">
+			<div class="col-md-4">
 						<div class="recent-property">
 							
 							<h3><a role="button" onclick="getPage('${e.id}')">${e.name}</a></h3>
@@ -1452,6 +1436,9 @@
 						</div>
 					</div>
 	`
+
+   
+	
 				$('.home-projects').each(function () {
 					var slider = $(this);
 					slider.slick({
@@ -1459,7 +1446,6 @@
 						dots: true,						
 						accessibility: false,
 						infinite: true,
-						// variableWidth: true,
 						autoplay: true,
 						autoplaySpeed: 5000,
 						slidesToShow: 3,

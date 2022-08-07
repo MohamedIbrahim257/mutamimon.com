@@ -571,10 +571,10 @@ iframe.instagram-media {
 
 /* GALLERIES */
 /* .project-gallery {
-	background-color: red;
+
 	display: flex;
 	justify-content: center;
-	width: 50%;
+
 
 } */
 
@@ -588,6 +588,8 @@ iframe.instagram-media {
 
 .gallery-item img {
     height: 400px;
+
+
 
 }
 
