@@ -998,7 +998,7 @@
 										<img src="${e.thePhoto}" width="480" height="299"
 											alt="اسم المشروع سيكون هنا" title="اسم المشروع سيكون هنا">
 									</a>
-									<a class="project-type" href="/type/%d8%a3%d8%af%d9%88%d8%a7%d8%b1/">${e.category}</a>
+									<a class="project-type" role="button" onclick="getCurr('${e.category}')" >${e.category}</a>
 								</div>
 
 								<div class="project-excerpt">
@@ -1016,6 +1016,10 @@
 
 	function getPage(id) {
 		window.location.href = "/projects/m-projects.html?id=" + id;
+
+	}
+	function getCurr(category) {
+		window.location.href = "/type/"+ category;
 
 	}
 
