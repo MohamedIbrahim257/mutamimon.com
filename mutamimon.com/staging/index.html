@@ -1270,7 +1270,7 @@
 									<img src="${e.thePhoto}" width="480"
 										height="299" alt="متممون فالي 1" title="متممون فالي 1">
 								</a>
-								<a class="project-type" href="/type/%d8%b4%d9%82%d9%82/">${e.category}</a>
+								<a class="project-type" role="button" onclick="getCurr('${e.category}')">${e.category}</a>
 							</div>
 
 							<div class="project-excerpt">
@@ -1316,8 +1316,12 @@
 			window.location.href = "/projects/m-projects.html?id=" + id;
 
 		}
+		function getCurr(category) {
+		window.location.href = "/type/"+ category;
 
-	// /projects/m-projects.html?id=${e.id}m
+	}
+
+
 
 
 	</script>
