@@ -7,12 +7,15 @@
 	<meta name="theme-color" content="#627E67" />
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet" />
+	 <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" rel="stylesheet" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script> -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.css" rel="stylesheet" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.min.js"></script>
-	<!-- jQuery Modal -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.min.js"></script> -->
+
+	<link rel="stylesheet" type="text/css" href="../wp-includes/slick-1.8.1/slick/slick.css" />
+
+	<link rel="stylesheet" type="text/css" href="../wp-includes/slick-1.8.1/slick/slick-theme.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
@@ -934,7 +937,7 @@
 			var sLightbox = $(this);
 			sLightbox.slickLightbox({
 				src: 'src',
-				itemSelector: '.gallery-item img'
+				itemSelector: 'img'
 			});
 		});
 	</script>
@@ -1104,6 +1107,10 @@
 		</p>
 	</div>
 
+	<script src="../wp-includes/jquerymigrate.js"></script>
+	<script src="../wp-includes/jquery.js"></script>
+	<script type="text/javascript" src="../wp-includes/slick-1.8.1/slick/slick.min.js"></script>
+	<script src="../wp-includes/slick-lightbox.js"></script>
 	<link rel='stylesheet' id='wpforms-full-css'
 		href='/wp-content/plugins/wpforms-lite/assets/css/wpforms-full.min.css?ver=1.7.4.2' media='all' />
 

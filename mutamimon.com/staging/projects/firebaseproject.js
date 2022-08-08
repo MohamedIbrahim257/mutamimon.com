@@ -244,23 +244,30 @@ messagesRef.once("value", (snapshot) => {
             }
         }
 
-        let p = document.getElementById("zeTable");
-        for (let i = 0; i < e.details.length; i++) {
-            if (i == 2) {
-                let r = document.createElement("td");
-                r.innerText = e.details[i].text;
-                p.appendChild(r);
-            }
-            else {
-                let t = document.createElement("tr");
-                let r = document.createElement("td");
-                r.innerText = e.details[i].text;
-                t.appendChild(r);
-                p.appendChild(t);
-            }
-            console.clear();
 
+
+        let p = document.getElementById("zeTable");
+        if(!e.details){
+            console.log("Sorry , but this project have no deatails !");
+        }else{
+            for (let i = 0; i < e.details.length; i++) {
+                if (i == 2) {
+                    let r = document.createElement("td");
+                    r.innerText = e.details[i].text;
+                    p.appendChild(r);
+                }
+                else {
+                    let t = document.createElement("tr");
+                    let r = document.createElement("td");
+                    r.innerText = e.details[i].text;
+                    t.appendChild(r);
+                    p.appendChild(t);
+                }
+                console.clear();
+    
+            }
         }
+
 
 
         $('.project-gallery').each(function () {
@@ -290,14 +297,20 @@ messagesRef.once("value", (snapshot) => {
                 }
                 ]
             });
+                  // $(document).ready(function(){
+            //     $('.project-gallery').slickLightbox({
+            //       itemSelector: 'img'
+            //     });
+            //   });
 
             var sLightbox = $(this);
             sLightbox.slickLightbox({
                 src: 'src',
                 itemSelector: 'img'
             });
+      
         });
-
+  
     })
 })
 
