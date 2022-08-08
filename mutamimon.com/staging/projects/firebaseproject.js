@@ -208,7 +208,7 @@ messagesRef.once("value", (snapshot) => {
                     </div>
 
                     <div class="banner-section">
-                        <a href="/">
+                        <a target="-blank" href="${e.advLink}">
                             <img src="${e.adv}">
                         </a>
                     </div>
