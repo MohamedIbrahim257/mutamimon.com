@@ -608,7 +608,7 @@
 							</div>
 							<!-- End of .img-card -->
 						</div>
-						<div class="col-lg-4 col-md-6">
+						<!-- <div class="col-lg-4 col-md-6">
 							<div class="blog-box">
 								<a href="/%d9%87%d8%b0%d9%87-%d9%85%d8%ac%d8%b1%d8%af-%d8%b9%d9%86%d9%88%d8%a7%d9%86-%d8%aa%d8%ac%d8%b1%d9%8a%d8%a8%d9%8a-%d8%b3%d9%8a%d8%aa%d9%85-%d8%a7%d8%b3%d8%aa%d8%a8%d8%af%d8%a7%d9%84%d9%87-%d8%a8%d8%b9/"
 									class="img-card news-card">
@@ -622,8 +622,9 @@
 								</a>
 
 							</div>
-							<!-- End of .img-card -->
-						</div>
+						</div> -->
+
+						<div class="property-card"></div>
 
 					</div>
 					<!-- End of .row -->
@@ -799,6 +800,66 @@
 			2022 متممون العقارية.
 		</p>
 	</div>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+	var firebaseConfig = {
+		apiKey: "AIzaSyDOne-swdHmSrAvJOxeCMGrpeDNJQ1Di4A",
+		authDomain: "mutamimon-c1e68.firebaseapp.com",
+		databaseURL: "https://mutamimon-c1e68-default-rtdb.firebaseio.com",
+		projectId: "mutamimon-c1e68",
+		storageBucket: "mutamimon-c1e68.appspot.com",
+		messagingSenderId: "7245330178",
+		appId: "1:7245330178:web:3a792f8f0b3215f915b41b",
+		measurementId: "G-JVCXL6GDES"
+	};
+
+	firebase.initializeApp(firebaseConfig);
+	var messagesRef = firebase.database()
+		.ref('News');
+	console.log(messagesRef);
+	let arr = [];
+
+	messagesRef.once("value", (snapshot) => {
+		snapshot.forEach((element) => {
+			console.log(element.val());
+			 arr.push(element.val());
+			console.log(arr);
+		})
+		arr.map(e => {
+			document.querySelector(".property-card").innerHTML += `
+
+			<div class="col-lg-4 col-md-6">
+							<div class="blog-box">
+								<a role="button"  onclick="getPage('${e.id}')"
+									class="img-card news-card">
+									<img src="${e.thePhotoNews}"
+										alt="هذه مجرد عنوان تجريبي سيتم استبداله بعنوان المقال" class="img-fluid">
+									<div class="content">
+										<h2>
+											<span>${e.nameNews}</span>
+										</h2>
+									</div>
+								</a>
+
+							</div>
+						</div>
+	`
+		})
+
+
+	})
+
+	function getPage(id) {
+		window.location.href = "/news/index.html?id=" + id;
+
+	}
+
+
+
+
+</script>
+
 
 	<script src='/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js'></script>
 	<script src='/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.13.1' id='jquery-ui-datepicker-js'></script>
