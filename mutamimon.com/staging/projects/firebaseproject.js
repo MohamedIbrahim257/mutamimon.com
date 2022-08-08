@@ -1,6 +1,5 @@
 
 let id = window.location.search;
-// alert(id);
 id = id.substring(4);
 var firebaseConfig = {
     apiKey: "AIzaSyDOne-swdHmSrAvJOxeCMGrpeDNJQ1Di4A",

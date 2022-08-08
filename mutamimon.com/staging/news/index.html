@@ -751,6 +751,8 @@
 	</div>
 	<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
 	<script>
+		let id = window.location.search;
+		id = id.substring(4);
 		var firebaseConfig = {
 			apiKey: "AIzaSyDOne-swdHmSrAvJOxeCMGrpeDNJQ1Di4A",
 			authDomain: "mutamimon-c1e68.firebaseapp.com",
@@ -770,9 +772,12 @@
 
 		messagesRef.once("value", (snapshot) => {
 			snapshot.forEach((element) => {
-				console.log(element.val());
-				arr.push(element.val());
-				console.log(arr);
+				let valId = element.val().id;
+				// console.log(id);
+				// console.log(valId.toString());
+
+				valId.toString() === id ? arr.push(element.val()) : console.log("welcome");
+				// console.log(arr);
 			})
 			arr.map(e => {
 				document.querySelector(".property-card").innerHTML += `
@@ -926,10 +931,10 @@
 
 		})
 
-		function getPage(id) {
-			window.location.href = "/news/index.html?id=" + id;
+		// function getPage(id) {
+		// 	window.location.href = "/news/index.html?id=" + id;
 
-		}
+		// }
 
 
 
