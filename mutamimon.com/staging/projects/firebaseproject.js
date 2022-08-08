@@ -1,7 +1,7 @@
 
 let id = window.location.search;
+// alert(id);
 id = id.substring(4);
-
 var firebaseConfig = {
     apiKey: "AIzaSyDOne-swdHmSrAvJOxeCMGrpeDNJQ1Di4A",
     authDomain: "mutamimon-c1e68.firebaseapp.com",
@@ -21,9 +21,12 @@ let arr = [];
 
 messagesRef.once("value", (snapshot) => {
     snapshot.forEach((element) => {
-        console.log(element.val());
-        element.val().id === id ? arr.push(element.val()) : console.log("welcome");
-        console.log(arr);
+        let valId = element.val().id;
+        // console.log(id);
+        // console.log(valId.toString());
+
+        valId.toString() === id ? arr.push(element.val()) : console.log("welcome");
+        // console.log(arr);
     })
     arr.map(e => {
 
@@ -141,7 +144,7 @@ messagesRef.once("value", (snapshot) => {
             <div class="col-12 col-sm-3 col-lg-3 right-side-bar">
                 <div id="side-bar" class="clearfix">
                     <div class="project-download">
-                        <a href="https://jmp.sh/4eZpfkF">تحميل بروشور المشروع</a>
+                        <a href="${e.pdf}">تحميل بروشور المشروع</a>
                     </div>
 
                     <div class="message-section">
@@ -207,7 +210,7 @@ messagesRef.once("value", (snapshot) => {
 
                     <div class="banner-section">
                         <a href="/">
-                            <img src="/wp-content/uploads/2022/06/banner.jpg">
+                            <img src="${e.adv}">
                         </a>
                     </div>
 
@@ -228,69 +231,72 @@ messagesRef.once("value", (snapshot) => {
 
 `
         let z = document.querySelector(".project-gallery");
-      
 
-        for (let i = 0; i < e.photo.length; i++) {
-          
-            let input = document.createElement("img");
-            input.src = e.photo[i].url;
-            z.appendChild(input);
-           
+        if (!e.photo) {
+            console.log("Sorry , but this project have no images !");
+        } else {
+            for (let i = 0; i < e.photo.length; i++) {
+
+                let input = document.createElement("img");
+                input.src = e.photo[i].url;
+                z.appendChild(input);
+
+            }
         }
 
-    
-   
         let p = document.getElementById("zeTable");
-        for(let i=0;i< e.details.length;i++){
-            if(i == 2){
+        for (let i = 0; i < e.details.length; i++) {
+            if (i == 2) {
                 let r = document.createElement("td");
                 r.innerText = e.details[i].text;
                 p.appendChild(r);
             }
-            else{
+            else {
                 let t = document.createElement("tr");
                 let r = document.createElement("td");
                 r.innerText = e.details[i].text;
                 t.appendChild(r);
                 p.appendChild(t);
             }
+            console.clear();
+
         }
 
-    
-        $('.project-gallery').each(function () {
-			var slider = $(this);
-			slider.slick({
-				arrows: true,
-				dots: true,
-				accessibility: false,
-				infinite: true,
-				autoplay: true,
-				autoplaySpeed: 5000,
-				slidesToShow: 4,
-				slidesToScroll: 1,
-				responsive: [{
-					breakpoint: 600,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1
-					}
-				},
-				{
-					breakpoint: 480,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				}
-				]
-			});
 
-			var sLightbox = $(this);
-			sLightbox.slickLightbox({
-				src: 'src',
-				itemSelector: 'img'
-			});
-		});
+        $('.project-gallery').each(function () {
+            var slider = $(this);
+            slider.slick({
+                arrows: true,
+                dots: true,
+                accessibility: false,
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [{
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                ]
+            });
+
+            var sLightbox = $(this);
+            sLightbox.slickLightbox({
+                src: 'src',
+                itemSelector: 'img'
+            });
+        });
 
     })
 })
