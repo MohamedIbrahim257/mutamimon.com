@@ -147,55 +147,55 @@ messagesRef.once("value", (snapshot) => {
                     </div>
 
                     <div class="message-section">
-                        <span>للحجز أو الاستفسار</span>
-                        <div class="wpforms-container wpforms-container-full project-form" id="wpforms-134">
-                            <form id="wpforms-form-134"
-                                class="wpforms-validate wpforms-form wpforms-ajax-form" data-formid="134"
-                                method="post" enctype="multipart/form-data"
-                                action="/staging/projects/%d9%88%d8%ad%d8%af%d8%a7%d8%aa-%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d8%ad%d9%8a-%d8%a7%d9%84%d9%85%d9%84%d9%83-%d9%81%d9%87%d8%af/"
-                                data-token="300b84cd9270ef6ec7b0d033640a5068"><noscript
-                                    class="wpforms-error-noscript">Please enable JavaScript in your browser
-                                    to complete this form.</noscript>
-                                <div class="wpforms-field-container">
-                                    <div id="wpforms-134-field_3-container"
-                                        class="wpforms-field wpforms-field-text" data-field-id="3"><label
-                                            class="wpforms-field-label wpforms-label-hide"
-                                            for="wpforms-134-field_3">الاسم <span
-                                                class="wpforms-required-label">*</span></label><input
-                                            type="text" id="wpforms-134-field_3"
-                                            class="wpforms-field-large wpforms-field-required"
-                                            name="wpforms[fields][3]" placeholder="الاسم" required></div>
-                                    <div id="wpforms-134-field_4-container"
-                                        class="wpforms-field wpforms-field-text" data-field-id="4"><label
-                                            class="wpforms-field-label wpforms-label-hide"
-                                            for="wpforms-134-field_4">رقم الهاتف <span
-                                                class="wpforms-required-label">*</span></label><input
-                                            type="text" id="wpforms-134-field_4"
-                                            class="wpforms-field-large wpforms-field-required"
-                                            name="wpforms[fields][4]" placeholder="رقم الهاتف" required>
-                                    </div>
-                                    <div id="wpforms-134-field_1-container"
-                                        class="wpforms-field wpforms-field-textarea" data-field-id="1">
-                                        <label class="wpforms-field-label wpforms-label-hide"
-                                            for="wpforms-134-field_1">رسالتك</label><textarea
-                                            id="wpforms-134-field_1" class="wpforms-field-small"
-                                            name="wpforms[fields][1]"
-                                            placeholder="ما هو استفسارك؟"></textarea></div>
+                    <span>للحجز أو الاستفسار</span>
+                    <div class="wpforms-container wpforms-container-full project-form" id="wpforms-134">
+                        <form id="wpforms-form-134"
+                            class="wpforms-validate wpforms-form wpforms-ajax-form" data-formid="134"
+                            action="https://getform.io/f/bb05e956-b6c2-4e1f-8461-80bf8779cd1b"
+                            method="POST"><noscript
+                                class="wpforms-error-noscript">Please enable JavaScript in your browser
+                                to complete this form.</noscript>
+                            <div class="wpforms-field-container">
+                                <div id="wpforms-134-field_3-container"
+                                    class="wpforms-field wpforms-field-text" data-field-id="3"><label
+                                        class="wpforms-field-label wpforms-label-hide"
+                                        for="wpforms-134-field_3">الاسم <span
+                                            class="wpforms-required-label">*</span></label><input
+                                        type="text" id="name"
+                                        class="wpforms-field-large wpforms-field-required"
+                                        name="name" placeholder="الاسم" required></div>
+                                <div id="wpforms-134-field_4-container"
+                                    class="wpforms-field wpforms-field-text" data-field-id="4"><label
+                                        class="wpforms-field-label wpforms-label-hide"
+                                        for="wpforms-134-field_4">رقم الهاتف <span
+                                            class="wpforms-required-label">*</span></label><input
+                                        type="text" id="phone"
+                                        class="wpforms-field-large wpforms-field-required"
+                                        name="phone" placeholder="رقم الهاتف" required>
                                 </div>
-                                <div class="wpforms-submit-container"><input type="hidden"
-                                        name="wpforms[id]" value="134"><input type="hidden"
-                                        name="wpforms[author]" value="1"><input type="hidden"
-                                        name="wpforms[post_id]" value="334"><button type="submit"
-                                        name="wpforms[submit]" id="wpforms-submit-134"
-                                        class="wpforms-submit project-form-submit"
-                                        data-alt-text="جاري الإرسال..." data-submit-text="إرسال"
-                                        aria-live="assertive" value="wpforms-submit">إرسال</button><img
-                                        src="/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg"
-                                        class="wpforms-submit-spinner" style="display: none;" width="26"
-                                        height="26" alt=""></div>
-                            </form>
-                        </div> <!-- .wpforms-container -->
-                    </div>
+                                <div id="wpforms-134-field_1-container"
+                                    class="wpforms-field wpforms-field-textarea" data-field-id="1">
+                                    <label class="wpforms-field-label wpforms-label-hide"
+                                        for="wpforms-134-field_1">رسالتك</label><textarea
+                                        id="message" class="wpforms-field-small"
+                                        name="message"
+                                        placeholder="ما هو استفسارك؟"></textarea>
+                                </div>
+                            </div>
+                            <div class="wpforms-submit-container"><input type="hidden"
+                                    name="wpforms[id]" value="134"><input type="hidden"
+                                    name="wpforms[author]" value="1"><input type="hidden"
+                                    name="wpforms[post_id]" value="83"><button type="submit"
+                                    name="wpforms[submit]" id="wpforms-submit-134"
+                                    class="wpforms-submit project-form-submit"
+                                    data-alt-text="جاري الإرسال..." data-submit-text="إرسال"
+                                    aria-live="assertive" value="wpforms-submit">إرسال</button><img
+                                    src="/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg"
+                                    class="wpforms-submit-spinner" style="display: none;" width="26"
+                                    height="26" alt=""></div>
+                        </form>
+                    </div> <!-- .wpforms-container -->
+                </div>
 
                     <div class="contact-section">
                         <a href="tel:+966551936636" class="phone"><i class="fas fa-phone"></i> تواصل عبر
