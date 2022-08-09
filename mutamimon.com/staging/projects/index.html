@@ -979,6 +979,8 @@
 	console.log(messagesRef);
 	let arr = [];
 
+	
+
 	messagesRef.once("value", (snapshot) => {
 		snapshot.forEach((element) => {
 			console.log(element.val());
@@ -999,6 +1001,7 @@
 											alt="اسم المشروع سيكون هنا" title="اسم المشروع سيكون هنا">
 									</a>
 									<a class="project-type" role="button" onclick="getCurr('${e.category}')" >${e.category}</a>
+									
 								</div>
 
 								<div class="project-excerpt">
@@ -1007,10 +1010,11 @@
 
 
 							</div>
+						</a>
+									<a class="">${e.status === "مباع" ?  `<a class="project-status">${e.status}</a>` : `` }</a>
 						</div>	
 	`
 		})
-
 
 	})
 

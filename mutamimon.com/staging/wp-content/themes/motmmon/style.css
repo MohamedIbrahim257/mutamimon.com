@@ -6753,6 +6753,18 @@ a.project-type {
     padding: 4px 7px;
     border-radius: 3px;
 }
+a.project-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fbc1c6;;
+    display: inline-block;
+    font-size: 15px !important;
+    color: #fff;
+    padding: 4px 7px;
+    border-radius: 3px;
+}
+
 
 .project-excerpt {
     font-size: 16px;
