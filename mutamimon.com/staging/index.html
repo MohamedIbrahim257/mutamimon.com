@@ -1148,7 +1148,7 @@
 				<div>
 					<a class="whatsappchat" ref="Raff-WahtsApp" href='https://wa.me/message/R36PFOF2MZ6AD1'
 						target='_blank'>
-						<img class="whatsappimage" src="./wp-content/uploads/2022/06/whatssupImage.png"
+						<img class="whatsappimage" src="./wp-content/uploads/2022/06/imageedit_2_4337987787.png"
 							alt="RAFF WhatsApp" width="60" height="60" />
 					</a>
 				</div>
@@ -1255,7 +1255,7 @@
 		messagesRef.once("value", (snapshot) => {
 			snapshot.forEach((element) => {
 				console.log(element.val());
-				element.val().curr === true ? arr.push(element.val()) : console.log("welcome");
+				element.val().current ===  "مشاريع حاليه" ? arr.push(element.val()) : console.log("welcome");
 				console.log(arr);
 			})
 			arr.map(e => {

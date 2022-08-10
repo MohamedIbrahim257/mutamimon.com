@@ -905,7 +905,7 @@
 		messagesRef.once("value", (snapshot) => {
 			snapshot.forEach((element) => {
 				console.log(element.val());
-				element.val().curr === true ? arr.push(element.val()) : console.log("welcome");
+				element.val().current === "مشاريع حاليه" ? arr.push(element.val()) : console.log("welcome");
 				console.log(arr);
 			})
 			arr.map(e => {

@@ -799,7 +799,7 @@
 		messagesRef.once("value", (snapshot) => {
 			snapshot.forEach((element) => {
 				console.log(element.val());
-				element.val().curr === false ? arr.push(element.val()) : console.log("welcome");
+				element.val().current === "مشاريع سابقه" ? arr.push(element.val()) : console.log("welcome");
 				console.log(arr);
 				// 		document.querySelector(".property-card").innerHTML += `
 
