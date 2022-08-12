@@ -80,7 +80,7 @@ messagesRef.once("value", (snapshot) => {
                             تفاصيل المشروع
                         </h2>
                         <div  id="summary" class="">
-                         <iframe style="border:none;  border-radius: 15px;" width="100%" height="500" src="${e.projectDetails}" ></iframe>             
+                        <a class=""> ${e.projectDetails != undefined ?  ` <iframe style = "border:none ; border-radius: 15px; -webkit-transform:scale(1);-moz-transform-scale(1);" width="100%" height="500" target="-blank" src="${e.projectDetails}"> </iframe>` : `<div></div>` }         
                     </div>
                     </section>
                   
