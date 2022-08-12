@@ -79,11 +79,8 @@ messagesRef.once("value", (snapshot) => {
                         <h2 class="psection-title">
                             تفاصيل المشروع
                         </h2>
-                        <div  id="summary" class="summary">
-                        <table  cellspacing="0" cellpadding="0">
-                        <tbody id="zeTable">
-                            </tbody>
-                            </table>                    
+                        <div  id="summary" class="">
+                         <iframe style="border:none;  border-radius: 15px;" width="100%" height="500" src="${e.projectDetails}" ></iframe>             
                     </div>
                     </section>
                   
