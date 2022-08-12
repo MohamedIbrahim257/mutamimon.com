@@ -1293,8 +1293,9 @@
 
 						
 						</div>
-						<a class="">${e.status == "تحت الانشاء" || e.status == "جديدة"? `<a class="project-status">${e.status}</a>` : ""}</a>
+						<a class="">${e.status == "جديدة"? `<a class="project-status">${e.status}</a>` : ""}</a>
 						<a class="">${e.status == "مباع" ?`<a class="project-soldout">${e.status}</a>` : ""}</a>
+						<a class="">${e.status == "تحت الانشاء" ?`<a class="project-underConstruction ">${e.status}</a>` : ""}</a>
 					
 					</div>
 	`

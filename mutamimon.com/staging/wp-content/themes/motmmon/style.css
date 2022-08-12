@@ -6775,6 +6775,18 @@ a.project-soldout {
     padding: 4px 7px;
     border-radius: 3px;
 }
+a.project-underConstruction {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #87ceeb;;
+    display: inline-block;
+    font-size: 15px !important;
+    color: #fff;
+    padding: 4px 7px;
+    border-radius: 3px;
+}
+
 
 
 .project-excerpt {
