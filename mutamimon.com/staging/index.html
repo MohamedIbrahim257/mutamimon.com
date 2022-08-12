@@ -1293,7 +1293,8 @@
 
 						
 						</div>
-						<a class="">${e.status === "مباع" ? `<a class="project-status">${e.status}</a>` : ``}</a>
+						<a class="">${e.status == "مباع" || e.status == "جديدة"? `<a class="project-status">${e.status}</a>` : ""}</a>
+					
 					</div>
 	`
 
