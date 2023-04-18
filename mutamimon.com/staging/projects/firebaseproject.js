@@ -1,6 +1,7 @@
-
 let id = window.location.search;
-id = id.substring(4);
+id = parseInt(id.substring(4))
+
+
 var firebaseConfig = {
     apiKey: "AIzaSyDOne-swdHmSrAvJOxeCMGrpeDNJQ1Di4A",
     authDomain: "mutamimon-c1e68.firebaseapp.com",
@@ -20,12 +21,12 @@ let arr = [];
 
 messagesRef.once("value", (snapshot) => {
     snapshot.forEach((element) => {
-        let valId = element.val().id;
-        // console.log(id);
-        // console.log(valId.toString());
 
-        valId.toString() === id ? arr.push(element.val()) : console.log("welcome");
-        // console.log(arr);
+        let valId = parseInt(element.val().id)
+        valId === id ? arr.push(element.val()) : console.log("welcome");
+
+        console.log(valId)
+        console.log(id);
     })
     arr.map(e => {
 
@@ -56,8 +57,10 @@ messagesRef.once("value", (snapshot) => {
 
 
 
-
-    <div id="slick" class=" project-gallery gallery-item">
+     <div class="container" >
+     <div id="slick" class=" project-gallery gallery-item">
+     </div>
+  
 
 
 
@@ -79,8 +82,10 @@ messagesRef.once("value", (snapshot) => {
                         <h2 class="psection-title">
                             تفاصيل المشروع
                         </h2>
-                        <div  id="summary" class="">
-                        <a class=""> ${e.projectDetails != undefined ?  ` <iframe style = "border:none ; border-radius: 15px; -webkit-transform:scale(1);-moz-transform-scale(1);" width="100%" height="500" target="-blank" src="${e.projectDetails}"> </iframe>` : `<div></div>` }         
+                        <div  id="">
+                       <div class="projectDetails" >
+                       <div class="project-details" ></div>
+                       </div>        
                     </div>
                     </section>
                   
@@ -103,8 +108,8 @@ messagesRef.once("value", (snapshot) => {
                             موقع المشروع
                         </h2>
                         <iframe
-                        src="https://www.google.com/maps?q=${e.latitude},${e.longitude}&hl=es&z14&amp;output=embed"
-                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        src="https://www.google.com/maps?q=${e.latitude},${e.longitude}&hl=es&z14&amp;output=embed&l&hl=ar"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                       
                     </section>
@@ -114,18 +119,18 @@ messagesRef.once("value", (snapshot) => {
                     <div class="post-share">
                         <span class="share-title">أعجبك المشروع؟</span>
                         <div class="social-share-btns">
-                            <a class="share-btn share-btn-twitter"
-                                href="https://twitter.com/intent/tweet?text=/projects/%d9%88%d8%ad%d8%af%d8%a7%d8%aa-%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d8%ad%d9%8a-%d8%a7%d9%84%d9%85%d9%84%d9%83-%d9%81%d9%87%d8%af/"
-                                rel="nofollow" target="_blank"> <i class="fab fa-twitter"></i> غرد </a>
-                            <a class="share-btn share-btn-facebook"
-                                href="https://www.facebook.com/sharer/sharer.php?u=/projects/%d9%88%d8%ad%d8%af%d8%a7%d8%aa-%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d8%ad%d9%8a-%d8%a7%d9%84%d9%85%d9%84%d9%83-%d9%81%d9%87%d8%af/"
+                            <a id="twitter" class="share-btn share-btn-twitter"
+                            role="button"
+                                  rel="nofollow" target="_blank"> <i class="fab fa-twitter"></i> غرد </a>
+                            <a role="button" id="fb" class="share-btn share-btn-facebook"
+    
                                 rel="nofollow" target="_blank"> <i class="fab fa-facebook-f"></i> شارك </a>
                             <a class="share-btn share-btn-pinterest"
-                                href="http://pinterest.com/pin/create/button/?url=/projects/%d9%88%d8%ad%d8%af%d8%a7%d8%aa-%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d8%ad%d9%8a-%d8%a7%d9%84%d9%85%d9%84%d9%83-%d9%81%d9%87%d8%af/"
+                                href="http://pinterest.com/pin/create/button/?url=https://www.mutamimon.com/projects/m-projects.html?id=${e.id}"
                                 rel="nofollow" target="_blank"> <i class="fab fa-pinterest-p"></i> شارك </a>
                             <a class="share-btn share-btn-whatsapp"
-                                href="whatsapp://send?text=/projects/%d9%88%d8%ad%d8%af%d8%a7%d8%aa-%d9%85%d8%aa%d9%85%d9%85%d9%88%d9%86-%d8%ad%d9%8a-%d8%a7%d9%84%d9%85%d9%84%d9%83-%d9%81%d9%87%d8%af/"
-                                data-action="share/whatsapp/share" rel="nofollow" target="_blank"> <i
+                                href="whatsapp://send?text=https://www.mutamimon.com/projects/m-projects.html?id=${e.id}"
+                                data-action="share/whatsapp/share" rel="nofollow" "> <i
                                     class="fab fa-whatsapp"></i> شارك </a>
                         </div>
                     </div>
@@ -195,20 +200,18 @@ messagesRef.once("value", (snapshot) => {
                 </div>
 
                     <div class="contact-section">
-                        <a href="tel:+966551936636" class="phone"><i class="fas fa-phone"></i> تواصل عبر
+                        <a href="tel:920000486" class="phone"><i class="fas fa-phone"></i> تواصل عبر
                             الهاتف</a>
 
-                        <a href="https://api.whatsapp.com/send?phone=966501398017&amp;text=أريد الاستفسار عن وحدات متممون حي الملك فهد"
+                        <a href="https://api.whatsapp.com/send?phone=920000486+&amp;text=أريد الاستفسار عن ${e.name}"
                             target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i> تواصل عبر
                             واتساب</a>
 
                     </div>
 
                     <div class="banner-section">
-                    <a class=""> ${e.adv.length > 0 || "" ?  ` <a target="-blank" href="${e.advLink}">
-                    <img src="${e.adv}"> </a>` : `       <div class="banner-section">
-                    <img src="/wp-content/uploads/2022/06/banner.jpg">
-                    </div>` }
+                    <a class=""> ${e.adv.length > 0 ? ` <a target="-blank" href="${e.advLink}">
+                    <img src="${e.adv}"> </a>` : ""}
                     </div>
 
 
@@ -220,13 +223,110 @@ messagesRef.once("value", (snapshot) => {
 
 
         </div>
-    </div>
+        <div class="related-section">
+		<div class="container">
+			<h3 class="related-title">
+				مشاريع أخري
+			</h3>
+
+            <div  class="property-card home-project" ></div>
+
 
 </main>
 </div>
 </div>
 
+
 `
+
+        function shareOnFacebook() {
+            const navUrl = `https://www.facebook.com/sharer/sharer.php?u=https://www.mutamimon.com/projects/projects/m-projects.html?id=${e.id}`;
+            window.open(navUrl, '_blank');
+        }
+
+        const fb = document.getElementById('fb');
+        fb.addEventListener('click', shareOnFacebook);
+
+
+        function shareOnTwitter() {
+            const navUrl =
+                `https://twitter.com/intent/tweet?text=https://www.mutamimon.com/projects/m-projects.html?id=${e.id} ` + `https://www.mutamimon.com/projects/m-projects.html?id=${e.id}`
+
+
+                ;
+            window.open(navUrl, '_blank');
+        }
+
+        const tweet = document.getElementById('twitter');
+        tweet.addEventListener('click', shareOnTwitter);
+
+        messagesRef.once("value", (snapshot) => {
+            snapshot.forEach((element) => {
+                console.log(element.val());
+                element.val().current === "مشاريع حاليه" ? arr.push(element.val()) : console.log("welcome");
+                console.log(arr);
+            })
+            arr.slice(0,7).map(e => {
+                document.querySelector(".property-card").innerHTML += `
+        
+    <div class="col-md-4">
+                <div class="recent-property">
+                    
+                    <h3><a role="button" onclick="getPage('${e.id}')">${e.name}</a></h3>
+                    <div class="pimg-wrapper">
+                        <a ole="button" onclick="getPage('${e.id}')">
+                            <img src="${e.thePhoto}" width="480"
+                                height="299" alt="متممون فالي 1" title="متممون فالي 1">
+                        </a>
+                        <a class="project-type" role="button" onclick="getCurr('${e.category}')">${e.category}</a>
+                    </div>
+
+                    <div class="project-excerpt">
+                        <p>${e.desc}</p>
+                    </div>
+
+                
+                </div>
+    
+                <a class="">${e.status == "جديدة" ? `<a class="project-status">${e.status}</a>` : ""}</a>
+                <a class="">${e.status == "مباع" ? `<a class="project-soldout">${e.status}</a>` : ""}</a>
+                <a class="">${e.status == "تحت الانشاء" ? `<a class="project-underConstruction ">${e.status}</a>` : ""}</a>
+            </div>
+`
+
+
+
+                $(document).ready(function () {
+                    $('.home-project').slick({
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                        responsive: [{
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                        ]
+                    });
+                });
+            })
+
+
+        })
+
+
+
+
         let z = document.querySelector(".project-gallery");
 
         if (!e.photo) {
@@ -235,35 +335,56 @@ messagesRef.once("value", (snapshot) => {
             for (let i = 0; i < e.photo.length; i++) {
 
                 let input = document.createElement("img");
+                input.classList.add("w-100")
                 input.src = e.photo[i].url;
+
                 z.appendChild(input);
 
             }
         }
 
+        // let x = document.querySelector(".project-details");
+
+        // if (!e.imagesDetails) {
+        //     console.log("Sorry , but this project have no images !");
+        // } else {
+        //     for (let i = 0; i < e.imagesDetails.length; i++) {
+
+        //         let inputDetails = document.createElement("img");
+        //         inputDetails.style = "margin:10px ; border-radius:5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"
+        //         inputDetails.src = e.imagesDetails[i].url;
+        //         x.appendChild(inputDetails);
+
+        //     }
+        // }
 
 
-        let p = document.getElementById("zeTable");
-        if(!e.details){
-            console.log("Sorry , but this project have no deatails !");
-        }else{
-            for (let i = 0; i < e.details.length; i++) {
-                if (i == 2) {
-                    let r = document.createElement("td");
-                    r.innerText = e.details[i].text;
-                    p.appendChild(r);
-                }
-                else {
-                    let t = document.createElement("tr");
-                    let r = document.createElement("td");
-                    r.innerText = e.details[i].text;
-                    t.appendChild(r);
-                    p.appendChild(t);
-                }
-                console.clear();
-    
-            }
-        }
+
+
+
+
+
+        // let p = document.getElementById("zeTable");
+        // if (!e.details) {
+        //     console.log("Sorry , but this project have no deatails !");
+        // } else {
+        //     for (let i = 0; i < e.details.length; i++) {
+        //         if (i == 2) {
+        //             let r = document.createElement("td");
+        //             r.innerText = e.details[i].text;
+        //             p.appendChild(r);
+        //         }
+        //         else {
+        //             let t = document.createElement("tr");
+        //             let r = document.createElement("td");
+        //             r.innerText = e.details[i].text;
+        //             t.appendChild(r);
+        //             p.appendChild(t);
+        //         }
+        //         console.clear();
+
+        //     }
+        // }
 
 
 
@@ -274,27 +395,30 @@ messagesRef.once("value", (snapshot) => {
                 dots: true,
                 accessibility: false,
                 infinite: true,
+                adaptiveHeight: true,
                 autoplay: true,
-                autoplaySpeed: 5000,
-                slidesToShow: 4,
+                autoplaySpeed: 4000,
+                slidesToShow: 1,
                 slidesToScroll: 1,
                 responsive: [{
                     breakpoint: 600,
                     settings: {
                         slidesToShow: 2,
-                        slidesToScroll: 1
+                        slidesToScroll: 1,
+                        dots: false,
                     }
                 },
                 {
                     breakpoint: 480,
                     settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToScroll: 1 ,
+                        dots: false,
                     }
                 }
                 ]
             });
-                  // $(document).ready(function(){
+            // $(document).ready(function(){
             //     $('.project-gallery').slickLightbox({
             //       itemSelector: 'img'
             //     });
@@ -305,16 +429,105 @@ messagesRef.once("value", (snapshot) => {
                 src: 'src',
                 itemSelector: 'img'
             });
-      
+
         });
-  
+
+        // Get the container element where the cards will be displayed
+        var container = document.querySelector(".project-details");
+
+        // Loop through the apartments array and create a card for each apartment
+        for (var i = 0; i < e.apartments.length; i++) {
+            // Create a div element with the "card" class
+            var card = document.createElement("div");
+            card.classList.add("col-md-4");
+            card.classList.add("apartment-card");
+
+            // Create a header element with the apartment number
+            var header = document.createElement("h2");
+            header.textContent = "رقم الشقة : " + e.apartments[i].name;
+            card.appendChild(header);
+
+            // Create a paragraph element with the floor number and rent amount
+            var dis = document.createElement("div")
+            var info = document.createElement("p");
+            info.textContent = " الدور : " + e.apartments[i].number
+            info.style.fontWeight = "bolder"
+            info.style.textAlign = "center"
+            card.appendChild(info);
+
+
+            var info = document.createElement("p");
+            info.textContent = "المساحة : " + e.apartments[i].rent
+            info.style.fontWeight = "bolder"
+            info.style.textAlign = "center"
+            card.appendChild(info);
+
+            var info = document.createElement("p");
+            info.textContent = "المواصفات : " + e.apartments[i].spefic
+            info.style.fontWeight = "bolder"
+            info.style.textAlign = "center"
+            card.appendChild(info);
+
+            var infoPrice = document.createElement("p");
+            infoPrice.textContent = "السعر : " + e.apartments[i].price
+            infoPrice.style.fontWeight = "bolder"
+            infoPrice.style.fontSize = "2rem"
+            infoPrice.style.textAlign = "center"
+            card.appendChild(infoPrice);
+
+
+            var availabilityLabel = document.createElement("label");
+            availabilityLabel.className = "availability-label";
+            if (e.apartments[i].notic === "متاح") {
+                availabilityLabel.innerHTML = "متاح ";
+                card.classList.add("available")
+            } else if (e.apartments[i].notic === "مباع") {
+                availabilityLabel.innerHTML = "مباع";
+                card.classList.add("unavailable");
+                infoPrice.textContent = "غير متاح"
+                infoPrice.style.color = "red"
+            }
+            card.appendChild(availabilityLabel);
+
+            // Create a button for reserving the apartment
+            var reserveButton = document.createElement("button");
+            reserveButton.className = "reserve-button";
+            reserveButton.disabled = e.apartments[i].notic !== "متاح";
+            reserveButton.innerHTML = "حجز";
+            card.appendChild(reserveButton);
+            container.appendChild(card);
+
+            if (e.apartments[i].notic === "متاح") {
+                reserveButton.target = "_blank";
+                reserveButton.onclick = function () {
+                    window.open('https://www.google.com', '_blank');
+                }
+            } else {
+                reserveButton.disabled = true;
+            }
+
+
+        }
+
+
+
     })
+
+
 })
 
 
 
 
 
+function getPage(id) {
+    window.location.href = "/projects/m-projects.html?id=" + id;
+
+}
+function getCurr(category) {
+    window.location.href = "/type/" + category;
+
+}
 
 
 
