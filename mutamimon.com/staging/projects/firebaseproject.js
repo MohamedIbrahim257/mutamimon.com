@@ -57,7 +57,8 @@ messagesRef.once("value", (snapshot) => {
 
 
 
-     <div class="container" >
+     <div class="container image-slick" >
+     
      <div id="slick" class=" project-gallery gallery-item">
      </div>
   
@@ -203,7 +204,7 @@ messagesRef.once("value", (snapshot) => {
                         <a href="tel:920000486" class="phone"><i class="fas fa-phone"></i> تواصل عبر
                             الهاتف</a>
 
-                        <a href="https://api.whatsapp.com/send?phone=920000486+&amp;text=أريد الاستفسار عن ${e.name}"
+                        <a href="https://api.whatsapp.com/send/?phone=966552833310&text&type=phone_number&app_absent=0=أريد الاستفسار عن ${e.name}"
                             target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i> تواصل عبر
                             واتساب</a>
 
@@ -500,7 +501,7 @@ messagesRef.once("value", (snapshot) => {
             if (e.apartments[i].notic === "متاح") {
                 reserveButton.target = "_blank";
                 reserveButton.onclick = function () {
-                    window.open('https://www.google.com', '_blank');
+                    window.open('https://api.whatsapp.com/send/?phone=966552833310&text&type=phone_number&app_absent=0', '_blank');
                 }
             } else {
                 reserveButton.disabled = true;

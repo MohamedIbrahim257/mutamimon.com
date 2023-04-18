@@ -570,13 +570,14 @@ iframe.instagram-media {
 
 
 /* GALLERIES */
-/* .project-gallery {
+.project-gallery {
+	width: 70%;
+}
 
-	display: flex;
-	justify-content: center;
-
-
-} */
+.image-slick{
+	display: flex !important;
+	justify-content: center !important;
+}
 
 .gallery {
 	display: flex;
@@ -587,14 +588,17 @@ iframe.instagram-media {
 
 
 .gallery-item img {
-    height: 750px;
-
+    height: 600px;
+	border-radius: 5px;
 }
 @media (max-width: 992px) {
 
 	.gallery-item img {
 		height: 400px;
 	
+	}
+	.project-gallery {
+		width: 100%;
 	}
 }
 
